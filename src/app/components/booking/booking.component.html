@@ -1,0 +1,59 @@
+<section class="book" id="kontakt">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:44px">
+      <span class="code">L5 · Rezervacija</span>
+      <h2>Rezervirajte termin — bez trenutne naplate.</h2>
+      <p class="sub">Odaberite termin online ili pošaljite upit u kojem ukratko opišete svoj problem. Javljam se u najkraćem roku.</p>
+    </div>
+    <div class="book-grid">
+      <div class="reveal">
+        <div class="ticket">
+          <div class="tk-top">
+            <span class="tk-eyebrow">Usluga · Manualna terapija</span>
+            <h3>Individualna terapija</h3>
+            <div class="tk-dur">Trajanje · 40 minuta</div>
+            <div class="tk-price"><span class="amt">50 €</span><span class="per">po tretmanu</span></div>
+          </div>
+          <div class="perf"></div>
+          <div class="tk-stub">
+            <div class="tk-row"><span class="l">Uključeno</span><span class="v">Pregled · Yumeiho · Vježbe</span></div>
+            <div class="tk-row"><span class="l">Lokacija</span><span class="v">Radnički dol 1, Zagreb</span></div>
+            <div class="tk-row"><span class="l">Naplata</span><span class="v">Ne pri rezervaciji</span></div>
+            <a href="https://www.top-spine.com/booking-calendar" class="btn" target="_blank" rel="noopener">Rezerviraj termin online</a>
+          </div>
+        </div>
+        <div class="info-list">
+          <div class="info-row"><span class="lab">Lokacija</span><span class="val">Radnički dol 1, Zagreb</span></div>
+          <div class="info-row"><span class="lab">Telefon</span><span class="val"><a href="tel:+385998377265">+385 99 837 7265</a></span></div>
+          <div class="info-row"><span class="lab">E-mail</span><span class="val"><a href="mailto:neven.gladovic@gmail.com">neven.gladovic&#64;gmail.com</a></span></div>
+          <div class="info-row"><span class="lab">Radno vrijeme</span><span class="val">Po dogovoru</span></div>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <h3>Pošaljite upit</h3>
+        <p class="fnote">Ispunite obrazac i opišite svoj problem — kontaktirat ću vas uskoro.</p>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+          <div class="field">
+            <label for="ime">Ime i prezime</label>
+            <input id="ime" name="ime" type="text" autocomplete="name" ngModel required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" ngModel required email />
+          </div>
+          <div class="field">
+            <label for="tel">Broj mobitela</label>
+            <input id="tel" name="tel" type="tel" autocomplete="tel" ngModel />
+          </div>
+          <div class="field">
+            <label for="poruka">Ukratko opišite svoj problem</label>
+            <textarea id="poruka" name="poruka" ngModel required></textarea>
+          </div>
+          <button type="submit" class="btn">Pošalji upit</button>
+          <p class="form-msg" [class.show]="submitted()">Hvala na upitu! Javit ću vam se uskoro.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

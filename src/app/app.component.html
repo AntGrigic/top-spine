@@ -1,0 +1,18 @@
+<app-nav [scrolled]="scrolled()"></app-nav>
+
+<!-- spine rail (scroll progress) -->
+<div class="rail" aria-hidden="true">
+  <div class="track"></div>
+  <div class="fill" [style.height.px]="railHeight()"></div>
+</div>
+
+<main id="top">
+  <app-hero></app-hero>
+  <app-reviews></app-reviews>
+  <app-treatment></app-treatment>
+  <app-conditions></app-conditions>
+  <app-about></app-about>
+  <app-booking></app-booking>
+</main>
+
+<app-footer></app-footer>

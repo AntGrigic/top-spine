@@ -1,0 +1,23 @@
+<section class="proof" id="dokazi">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="code">C4 · Iskustva klijenata</span>
+      <h2>Rezultati koje su drugi već osjetili.</h2>
+      <p>Recenzije klijenata kojima je operacija bila preporučena, a koji su je zahvaljujući terapijama i vježbama uspjeli izbjeći.</p>
+    </div>
+    <div class="scroll-hint reveal">
+      <svg width="26" height="12" viewBox="0 0 26 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M1 6h22M18 1l5 5-5 5"/></svg>
+      Povucite za više recenzija
+    </div>
+    <div class="proof-grid">
+      @for (r of reviews; track $index) {
+        <div class="quote reveal">
+          <div class="stars">★★★★★</div>
+          <p>{{ r.text }}</p>
+          <span class="who"><span class="g">G</span> Recenzija · Google</span>
+        </div>
+      }
+    </div>
+    <p class="proof-note reveal">Napomena: terapija ne zamjenjuje liječnički pregled. Preporučljivo je najprije se obratiti liječniku i načiniti ciljane pretrage radi isključivanja drugih uzroka boli.</p>
+  </div>
+</section>

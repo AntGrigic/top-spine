@@ -1,0 +1,43 @@
+/* ---------- SECTION SHELL + SPINE RAIL ---------- */
+:host {
+  display: block;
+}
+
+main {
+  position: relative;
+}
+
+.rail {
+  position: fixed;
+  left: clamp(16px, calc(50vw - 596px), 220px);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  z-index: 5;
+  pointer-events: none;
+
+  .track {
+    position: absolute;
+    top: 15vh;
+    bottom: 12vh;
+    left: 0;
+    width: 2px;
+    background: var(--line-soft);
+  }
+
+  .fill {
+    position: absolute;
+    top: 15vh;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background: var(--jade);
+    transition: height 0.15s linear;
+  }
+}
+
+@media (max-width: 1120px) {
+  .rail {
+    display: none;
+  }
+}

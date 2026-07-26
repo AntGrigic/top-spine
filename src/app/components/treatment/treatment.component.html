@@ -1,0 +1,19 @@
+<section id="terapija">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="code">C7 · Tijek terapije</span>
+      <h2>Od pregleda do vježbi — jedan tretman.</h2>
+      <p>Svaki dolazak je individualno prilagođen i vodi vas kroz četiri koraka.</p>
+    </div>
+    <div class="flow">
+      @for (s of steps; track s.num) {
+        <div class="node reveal">
+          <div class="dot">{{ s.num }}</div>
+          <span class="tag">{{ s.tag }}</span>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.text }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

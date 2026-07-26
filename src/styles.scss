@@ -1,0 +1,183 @@
+/* TOP SPINE — global styles & design tokens
+   Component-specific styles live in each component's own .scss file.
+   Only design tokens, base resets and cross-component utilities stay here. */
+:root {
+  --ink: #0c2320;        /* near-black teal */
+  --spruce: #123f38;     /* deep spruce */
+  --spruce-2: #1b534a;
+  --bone: #f2eee2;       /* warm background */
+  --paper: #fbf8ef;      /* cards */
+  --jade: #3e9e7b;       /* recovery accent */
+  --jade-deep: #2e7c60;
+  --line: rgba(12, 35, 32, 0.14);
+  --line-soft: rgba(12, 35, 32, 0.08);
+  --muted: #5a6a64;
+  --display: "Bricolage Grotesque", system-ui, sans-serif;
+  --serif: "Newsreader", Georgia, serif;
+  --mono: "Space Mono", ui-monospace, monospace;
+  --maxw: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bone);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.02;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ---- utility eyebrow / vertebra code ---- */
+.code {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--jade-deep);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  &::before {
+    content: "";
+    width: 26px;
+    height: 1px;
+    background: var(--jade);
+  }
+}
+
+/* ---- shared button ---- */
+.btn {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--spruce);
+  color: var(--bone);
+  padding: 11px 20px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, background 0.3s;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background: var(--jade-deep);
+    transform: translateY(-1px);
+  }
+
+  &.ghost {
+    background: transparent;
+    color: var(--spruce);
+    border: 1px solid var(--line);
+
+    &:hover {
+      background: var(--spruce);
+      color: var(--bone);
+    }
+  }
+}
+
+/* ---- section shell ---- */
+section {
+  padding: 96px 0;
+  position: relative;
+}
+
+.sec-head {
+  max-width: 640px;
+  margin-bottom: 52px;
+
+  h2 {
+    font-size: clamp(30px, 4.4vw, 50px);
+    margin-top: 16px;
+  }
+
+  p {
+    color: var(--muted);
+    margin: 18px 0 0;
+    font-size: 19px;
+  }
+}
+
+/* ---- scroll-reveal animation (driven by RevealDirective) ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  &.in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- RESPONSIVE (global) ---------- */
+@media (max-width: 680px) {
+  body {
+    font-size: 17px;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  .wrap {
+    padding: 0 20px;
+  }
+}

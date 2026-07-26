@@ -1,0 +1,76 @@
+/* ---------- CONDITIONS ---------- */
+:host {
+  display: block;
+}
+
+.cond-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.cond {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 32px 28px;
+  background: var(--paper);
+  transition: transform 0.25s, box-shadow 0.25s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px -22px rgba(12, 35, 32, 0.4);
+  }
+
+  .ico {
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    background: rgba(62, 158, 123, 0.13);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--jade-deep);
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 21px;
+    margin-bottom: 14px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  li {
+    font-size: 16px;
+    color: var(--spruce);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.4;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--jade);
+      opacity: 0.65;
+    }
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 960px) {
+  .cond-grid {
+    grid-template-columns: 1fr;
+  }
+}

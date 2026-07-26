@@ -1,0 +1,23 @@
+<header [class.scrolled]="scrolled">
+  <nav>
+    <a href="#top" class="brand" aria-label="TOP SPINE početna">
+      <svg class="mark" viewBox="0 0 20 26" fill="none" aria-hidden="true">
+        <path d="M10 1 C6 3 6 5 10 6.5 C14 8 14 10 10 11.5 C6 13 6 15 10 16.5 C14 18 14 20 10 21.5 C6 23 8 25 10 25" stroke="#3E9E7B" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>TOP SPINE<small>MANUALNA TERAPIJA</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Otvori izbornik"
+            [attr.aria-expanded]="open()" (click)="open.set(!open())">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+      </svg>
+    </button>
+    <div class="navlinks" [class.open]="open()">
+      <a href="#top" (click)="close()">Naslovna</a>
+      <a href="#terapija" (click)="close()">Terapija</a>
+      <a href="#stanja" (click)="close()">Što liječimo</a>
+      <a href="#o-meni" (click)="close()">O meni</a>
+      <a href="#kontakt" class="btn" (click)="close()">Rezerviraj termin</a>
+    </div>
+  </nav>
+</header>

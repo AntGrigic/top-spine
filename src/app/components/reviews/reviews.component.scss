@@ -1,0 +1,117 @@
+/* ---------- PROOF / AVOID SURGERY ---------- */
+:host {
+  display: block;
+}
+
+.proof {
+  background: var(--ink);
+  color: var(--bone);
+
+  .code {
+    color: #7fd8b4;
+
+    &::before {
+      background: var(--jade);
+    }
+  }
+
+  h2 {
+    color: var(--bone);
+  }
+
+  .sec-head p {
+    color: rgba(242, 238, 226, 0.66);
+  }
+}
+
+.proof-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 4px 20px;
+  margin: 0 -4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--jade) rgba(255, 255, 255, 0.12);
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 99px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--jade-deep);
+    border-radius: 99px;
+  }
+}
+
+.quote {
+  flex: 0 0 clamp(280px, 80vw, 360px);
+  scroll-snap-align: start;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .stars {
+    color: var(--jade);
+    letter-spacing: 3px;
+    font-size: 14px;
+  }
+
+  p {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.55;
+    color: rgba(242, 238, 226, 0.9);
+    margin: 0;
+  }
+
+  .who {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: rgba(242, 238, 226, 0.55);
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .g {
+      color: var(--jade);
+      font-weight: 700;
+    }
+  }
+}
+
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(242, 238, 226, 0.5);
+  margin-bottom: 22px;
+
+  svg {
+    color: var(--jade);
+  }
+}
+
+.proof-note {
+  margin-top: 34px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+  color: rgba(242, 238, 226, 0.55);
+  max-width: 60ch;
+}

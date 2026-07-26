@@ -1,0 +1,88 @@
+/* ---------- ABOUT ---------- */
+:host {
+  display: block;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.about-card {
+  background: var(--spruce);
+  color: var(--bone);
+  border-radius: 22px;
+  padding: 44px 40px;
+  position: relative;
+  overflow: hidden;
+
+  .code {
+    color: #7fd8b4;
+  }
+
+  .avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: var(--jade);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    font-size: 27px;
+    color: var(--bone);
+  }
+
+  .role {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(242, 238, 226, 0.6);
+    margin: 6px 0 22px;
+  }
+
+  p {
+    font-size: 16.5px;
+    color: rgba(242, 238, 226, 0.85);
+    margin: 0;
+  }
+}
+
+.about-text {
+  h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    margin-bottom: 22px;
+  }
+
+  p {
+    color: var(--spruce);
+    margin: 0 0 18px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .lead {
+    font-size: 21px;
+    color: var(--ink);
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 960px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
