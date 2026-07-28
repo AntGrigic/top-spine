@@ -20,8 +20,8 @@
       right: 0;
       width: 100%;
       height: 2px;
-      background: linear-gradient(90deg, var(--jade), rgba(62, 158, 123, 0.15));
-      transform: translateX(50%);
+      background: linear-gradient(-90deg, var(--jade), rgba(62, 158, 123, 0.15));
+      transform: translateX(10%);
     }
 
     &:first-child .dot {

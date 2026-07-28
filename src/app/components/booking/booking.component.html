@@ -19,7 +19,7 @@
             <div class="tk-row"><span class="l">Uključeno</span><span class="v">Pregled · Yumeiho · Vježbe</span></div>
             <div class="tk-row"><span class="l">Lokacija</span><span class="v">Radnički dol 1, Zagreb</span></div>
             <div class="tk-row"><span class="l">Naplata</span><span class="v">Ne pri rezervaciji</span></div>
-            <a href="https://www.top-spine.com/booking-calendar" class="btn" target="_blank" rel="noopener">Rezerviraj termin online</a>
+            <a href="https://www.top-spine.com/book-online" class="btn" target="_blank" rel="noopener">Rezerviraj termin online</a>
           </div>
         </div>
         <div class="info-list">
@@ -36,19 +36,38 @@
         <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
           <div class="field">
             <label for="ime">Ime i prezime</label>
-            <input id="ime" name="ime" type="text" autocomplete="name" ngModel required />
+            <input id="ime" name="ime" type="text" autocomplete="name" ngModel required
+                   #ime="ngModel" [class.invalid]="ime.invalid && ime.touched" />
+            @if (ime.invalid && ime.touched) {
+              <p class="err">Unesite ime i prezime.</p>
+            }
           </div>
           <div class="field">
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" ngModel required email />
+            <input id="email" name="email" type="email" autocomplete="email" ngModel required email
+                   #email="ngModel" [class.invalid]="email.invalid && email.touched" />
+            @if (email.invalid && email.touched) {
+              <p class="err">
+                @if (email.errors?.['required']) { Unesite email. }
+                @else { Unesite ispravan email. }
+              </p>
+            }
           </div>
           <div class="field">
             <label for="tel">Broj mobitela</label>
-            <input id="tel" name="tel" type="tel" autocomplete="tel" ngModel />
+            <input id="tel" name="tel" type="tel" autocomplete="tel" ngModel required
+                   #tel="ngModel" [class.invalid]="tel.invalid && tel.touched" />
+            @if (tel.invalid && tel.touched) {
+              <p class="err">Unesite broj mobitela.</p>
+            }
           </div>
           <div class="field">
             <label for="poruka">Ukratko opišite svoj problem</label>
-            <textarea id="poruka" name="poruka" ngModel required></textarea>
+            <textarea id="poruka" name="poruka" ngModel required
+                      #poruka="ngModel" [class.invalid]="poruka.invalid && poruka.touched"></textarea>
+            @if (poruka.invalid && poruka.touched) {
+              <p class="err">Ukratko opišite svoj problem.</p>
+            }
           </div>
           <button type="submit" class="btn">Pošalji upit</button>
           <p class="form-msg" [class.show]="submitted()">Hvala na upitu! Javit ću vam se uskoro.</p>

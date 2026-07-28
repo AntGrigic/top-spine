@@ -27,7 +27,7 @@
 .proof-grid {
   display: flex;
   gap: 20px;
-  overflow-x: auto;
+  overflow: auto hidden;
   scroll-snap-type: x mandatory;
   padding: 4px 4px 20px;
   margin: 0 -4px;
